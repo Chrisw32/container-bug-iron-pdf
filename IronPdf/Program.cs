@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Reflection;
 using System.Text;
 
 namespace IronPdf
@@ -10,11 +11,11 @@ namespace IronPdf
         {
             
             var populatedTemplate = "<html><head></head><body>hello</body></html>";
-
-            var pdfRenderer = new IronPdf.HtmlToPdf();
-       
-            var pdf = pdfRenderer.RenderHtmlAsPdf(populatedTemplate);
             
+            var pdfRenderer = new IronPdf.HtmlToPdf();
+
+            var pdf = pdfRenderer.RenderHtmlAsPdf(populatedTemplate);
+
             var file = pdf.BinaryData;
 
             Console.WriteLine(file.Length.ToString());
